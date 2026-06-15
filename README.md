@@ -132,6 +132,8 @@ npx aiblueprint-cli@latest agents config unify sessions
 
 - `cc` - Claude Code with permissions skipped
 - `ccc` - Claude Code with continue mode
+- `cx` - Codex
+- `cxc` - Codex continue mode for the current directory
 
 ### Skills
 
@@ -169,11 +171,11 @@ npx skills add Melvynx/aiblueprint --skill skill-manager
 Unlock advanced features at [mlv.sh/claude-cli](https://mlv.sh/claude-cli)
 
 ```bash
-# Activate premium
-npx aiblueprint-cli@latest agents pro activate YOUR_TOKEN
-
-# Setup premium configs
+# Setup premium configs (prompts for your token if needed)
 npx aiblueprint-cli@latest agents pro setup
+
+# Or activate first if you prefer
+npx aiblueprint-cli@latest agents pro activate YOUR_TOKEN
 ```
 
 ## 🛠️ Development
