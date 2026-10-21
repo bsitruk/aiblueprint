@@ -29,14 +29,13 @@ This catalog is generated from the directories shipped under
 | `appstore-connect` | Manage App Store Connect workflows |
 | `audit-memories` | Audit and clean project agent documentation |
 | `audit-skills` | Audit installed skill usage, discovery, invocation controls, and scope |
+| `audit-test` | Gate new tests and prune low-value ones |
 | `environments-manager` | Set up per-worktree environments |
 | `arena` | Make sub-agents compete until one solution survives |
 | `grill-me` | Stress-test a plan with focused questions |
 | `hooks-manager` | Create and debug Claude Code hooks |
-| `limite` | Route easy Claude Code work to Haiku to save your limit |
 | `rules-manager` | Maintain AGENTS.md and agent rules |
 | `skill-manager` | Create, edit, audit, or prune skills |
-| `test-audit` | Gate new tests and prune low-value ones |
 | `use-style` | Apply named visual style guides |
 
 ---
@@ -128,26 +127,6 @@ dependencies one decision at a time.
 
 ---
 
-## limite
-
-```bash
-npx skills@latest add melvynx/aiblueprint --skill limite
-```
-
-**What it does:** Installs two Haiku sub-agents in Claude Code, `Explore` (code search
-and reading, it replaces the built-in Explore that inherits Opus) and `chores`
-(renames, one-line edits, running a command), plus a `## Models` note in `CLAUDE.md`
-that delegates easy work to them. Opus keeps planning, debugging and multi-file changes.
-
-**Use it for:** hitting your Claude limit too fast, or saying "limite".
-
-**Key points:**
-- Argument hint: `[--project]`. User scope (`~/.claude/`) by default, `--project` writes to `.claude/`.
-- Never overwrites an existing agent without showing the diff first.
-- Check `/agents` afterwards: both agents must show Haiku.
-
----
-
 ## rules-manager
 
 ```bash
@@ -192,10 +171,10 @@ platforms.
 
 ---
 
-## test-audit
+## audit-test
 
 ```bash
-npx skills@latest add melvynx/aiblueprint --skill test-audit
+npx skills@latest add melvynx/aiblueprint --skill audit-test
 ```
 
 **What it does:** Gates every new or changed test against a value bar, and audits
